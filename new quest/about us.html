@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Edutech</title>
+  <style>
+    /* Global styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2c2c2c;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      animation: fadeIn 2s ease-out; /* Add fade-in animation */
+    }
+    /* Bubbles effect */
+    .bubble {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: floatUp 10s infinite;
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+    /* Fade-in effect */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    /* Container */
+    .container {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      background-color: grey;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      animation: fadeIn 2s ease-out;
+    }
+    h1 {
+      color: #00c853;
+      margin-bottom: 20px;
+    }
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    h2 {
+      color: #00c853;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    /* Bubbles (adjust size, position, animation delay, etc.) */
+    .bubble {
+      position: absolute;
+      background-color: rgba(0, 255, 255, 0.6);
+      border-radius: 50%;
+      animation: floatUp 15s infinite;
+    }
+
+    /* Bubbles generation with randomized size, position, and animation */
+    .bubble:nth-child(odd) {
+      background-color: rgba(0, 255, 255, 0.6);
+    }
+
+    .bubble:nth-child(even) {
+      background-color: rgba(255, 255, 0, 0.6);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Add bubbles using JS -->
+   <script>
+    // Create floating bubbles when the page loads
+    window.onload = function() {
+      for (let i = 0; i < 20; i++) {
+        let bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        bubble.style.width = bubble.style.height = Math.random() * 40 + 10 + 'px';  // Random size for each bubble
+        bubble.style.left = Math.random() * 100 + 'vw';  // Random horizontal position
+        bubble.style.animationDuration = (Math.random() * 5 + 5) + 's';  // Random float-up speed
+        bubble.style.animationDelay = (Math.random() * 5) + 's';  // Random delay before animation starts
+        document.body.appendChild(bubble);  // Add the bubble to the body
+      }
+    };
+
+    // Notification icon click handler
+    function showNotification() {
+      alert("You have a new cleaning service update!");
+    }
+  </script>
+
+  <div class="container">
+    <h1>Quest Cleaning Services</h1>
+    <p>
+      Quest is a modern cleaning service platform based in Uganda that offers fast, reliable, and affordable cleaning services
+      for homes, houses, and offices. We are dedicated to improving hygiene and cleanliness in our communities by combining
+      technology with trusted service delivery.
+    </p>
+    <p>
+      Our mission is to simplify the process of accessing cleaning services through a user-friendly app where customers can
+      easily book services and make secure mobile payments via MTN or Airtel.
+    </p>
+    <p>
+      With a passionate team of trained professionals, we aim to set a new standard for cleanliness and customer satisfaction in
+      Uganda.
+    </p>
+    <p>
+      Whether you're in Kampala, Entebbe, Mukono, or Jinja—Quest is your go-to cleaning solution.
+    </p>
+
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>✅ Trusted and professional cleaners</li>
+      <li>✅ Fair pricing for Ugandan customers</li>
+      <li>✅ Seamless mobile money integration</li>
+      <li>✅ 24/7 customer support</li>
+    </ul>
+    <p><strong>Join the Quest family today and experience the difference of digital cleaning made easy!</strong></p>
+    <a href="intro.html">← Back to Home</a>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confirmation Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      margin: 0;
+      padding: 0;
+      background-image: url('money3.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bubble {
+      position: absolute;
+      background: rgba(0, 255, 127, 0.2);
+      border-radius: 50%;
+      animation: float 15s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    .confirmation-box {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      max-width: 500px;
+      margin: 50px auto;
+      border-radius: 10px;
+      color: #f1f1f1;
+      animation: fadeIn 2s ease-out;
+    }
+
+    h2 {
+      color: #00c853;
+    }
+
+    .info {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="confirmation-box">
+  <h2>Thank You for Your Booking!</h2>
+  <p>Your payment details have been successfully received. Here's a summary of your booking:</p>
+
+  <div class="info"><strong>Phone Number:</strong> <span id="userPhone"></span></div>
+  <div class="info"><strong>Additional Notes:</strong> <span id="userNotes"></span></div>
+  <div class="info"><strong>Amount Paid (UGX):</strong> <span id="userAmount"></span></div>
+  <div class="info"><strong>Reference Number:</strong> <span id="refNumber"></span></div>
+  <div class="info"><strong>Payment Date:</strong> <span id="payDate"></span></div>
+</div>
+
+<script>
+  // Generate animated bubbles
+  for (let i = 0; i < 20; i++) {
+    const bubble = document.createElement('div');
+    bubble.className = 'bubble';
+    bubble.style.width = `${Math.random() * 80 + 20}px`;
+    bubble.style.height = bubble.style.width;
+    bubble.style.left = `${Math.random() * 100}vw`;
+    bubble.style.animationDuration = `${Math.random() * 10 + 10}s`;
+    document.body.appendChild(bubble);
+  }
+
+  // Display confirmation details
+  function getQueryParams() {
+    const urlParams = new URLSearchParams(window.location.search);
+
+  
+    const phone = urlParams.get('phone') || 'N/A';
+    const notes = decodeURIComponent(urlParams.get('notes') || 'None');
+    const amount = urlParams.get('amount') || '0';
+    const reference = urlParams.get('ref') || Math.floor(10000000 + Math.random() * 90000000);
+    const date = new Date().toLocaleString();
+
+ 
+    document.getElementById("userPhone").textContent = phone;
+    document.getElementById("userNotes").textContent = notes;
+    document.getElementById("userAmount").textContent = amount;
+    document.getElementById("refNumber").textContent = reference;
+    document.getElementById("payDate").textContent = date;
+  }
+
+  getQueryParams();
+</script>
+
+</body>
+</html>
