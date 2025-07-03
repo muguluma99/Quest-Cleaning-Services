@@ -16,7 +16,7 @@ Prerequisites
 Step-by-Step Setup 
   bash
 Clone repository
-git clone https://github.com/muguluma@99/quest-cleaning.git
+git clone https://github.com/muguluma99/Quest-Cleaning-Services/tree/main/new%20quest
 Install dependencies
 cd quest-cleaning
 composer install
