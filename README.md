@@ -1,5 +1,11 @@
 
 Quest Cleaning Services 🧹✨
+Group Members
+1.Muguluma Micheal
+2.Gwolo Julius
+3.Oroma Emmy John
+4.Kedi Davis Livingstone
+5.Mubiru Sulaiman
 📝 Description 
 Kampala's first tech-driven cleaning platform that connects users with professional cleaners via a mobile/web app. Combines seamless booking, transparent pricing, and secure mobile money payments to revolutionize Uganda's cleaning industry.
  
